@@ -8,9 +8,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
-  entry: ['./src/js/app.js', './src/sass/app.sass'],
+  entry: [
+    './wp/wp-content/themes/goldthorn/src/js/app.js',
+    './wp/wp-content/themes/goldthorn/src/sass/app.sass'
+  ],
   output: {
-    filename: './dist/js/app.js',
+    filename: './wp/wp-content/themes/goldthorn/dist/js/theme.js',
     path: path.resolve(__dirname)
   },
   module: {
@@ -36,7 +39,7 @@ module.exports = {
   plugins: [
     // extract css into dedicated file
     new MiniCssExtractPlugin({
-      filename: './dist/css/style.min.css'
+      filename: './wp/wp-content/themes/goldthorn/dist/css/theme.css'
     })
   ],
   optimization: {
