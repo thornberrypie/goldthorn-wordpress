@@ -1,1 +1,0 @@
-<h3>Goldthorn Productions</h3>
