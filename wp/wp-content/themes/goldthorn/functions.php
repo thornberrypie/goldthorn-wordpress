@@ -1,9 +1,10 @@
 <?php
-// Set up post types
-require_once 'includes/post-types/product.php';
-
 // Hooks and Filters
 add_action('wp_enqueue_scripts', 'gt_enqueue_files');
+add_action( 'after_setup_theme', 'gt_post_thumbnails' );
+
+// Set up post types
+require_once 'includes/post-types/product.php';
 
 // Set up navigation
 register_nav_menus(
@@ -27,4 +28,8 @@ function gt_get_the_title() {
   } else {
     return the_title();
   }
+}
+
+function gt_post_thumbnails() {
+  add_theme_support( 'post-thumbnails' );
 }
